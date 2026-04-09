@@ -1,0 +1,112 @@
+---
+import '../styles/global.css';
+
+const projects = [
+  {
+    name: 'GorgonExplorer',
+    description: 'Build planner and game data explorer for Project: Gorgon MMO. Plan your skill combos, assign gear mods, and browse game data.',
+    url: 'https://gorgonexplorer.com',
+    image: '/images/gorgon.png',
+  },
+  {
+    name: 'Leagues Advisor',
+    description: 'Intelligent task planner for Old School RuneScape Leagues. Scores tasks by efficiency, plans routes, and syncs progress via RuneLite plugin.',
+    url: 'https://leagues-advisor.com/about',
+    image: '/images/leagues.png',
+  },
+];
+
+const kofiUrl = 'https://ko-fi.com/laurenprete';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lauren's Game Tools</title>
+    <meta name="description" content="Free web tools for the games I love. Build planners, task advisors, and more." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="bg-darker text-text min-h-screen">
+    <div class="mx-auto max-w-3xl px-6 py-16 lg:py-24">
+
+      <!-- Hero -->
+      <section class="mb-16 text-center">
+        <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4">
+          I build free tools for the games I love.
+        </h1>
+        <p class="text-lg text-text-muted max-w-xl mx-auto mb-8">
+          Web apps for niche gaming communities. Always free, always open to feedback.
+          If they've been useful to you, consider supporting the work.
+        </p>
+        <a
+          href={kofiUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-accent text-darker font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
+        >
+          Support My Work
+        </a>
+      </section>
+
+      <!-- Projects -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold text-accent mb-6">Projects</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          {projects.map((project) => (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group block rounded-lg overflow-hidden bg-card hover:bg-card-hover border border-white/10 transition-colors"
+            >
+              <img
+                src={project.image}
+                alt={project.name}
+                class="w-full h-40 object-cover object-top"
+              />
+              <div class="p-5">
+                <h3 class="text-lg font-bold text-white mb-2 group-hover:text-accent transition-colors">
+                  {project.name}
+                </h3>
+                <p class="text-sm text-text-muted leading-relaxed">
+                  {project.description}
+                </p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold text-accent mb-4">About</h2>
+        <div class="bg-card rounded-lg border border-white/10 p-6">
+          <p class="text-text-muted leading-relaxed mb-4">
+            I'm Lauren, a software engineer who spends her free time building tools
+            for the games she plays. These started as personal projects to solve
+            problems I had as a player, and I keep them running for anyone who finds them useful.
+          </p>
+          <p class="text-text-muted leading-relaxed">
+            Want to see my professional work? Visit my
+            <a href="https://laurenprete.com" class="text-accent hover:underline">portfolio</a>.
+          </p>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="text-center text-text-muted text-sm border-t border-white/10 pt-8">
+        <a
+          href={kofiUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-accent hover:underline"
+        >
+          Support on Ko-fi
+        </a>
+        <p class="mt-4">&copy; {new Date().getFullYear()} Lauren Prete</p>
+      </footer>
+
+    </div>
+  </body>
+</html>
